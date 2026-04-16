@@ -63,10 +63,13 @@ export default function ConversationSidebar({
           <ul className="py-1">
             {conversations.map((conv) => (
               <li key={conv.id} className="group relative">
-                <button
+                <div
+                  role="button"
+                  tabIndex={0}
                   onClick={() => onSelect(conv.id)}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onSelect(conv.id); } }}
                   className={[
-                    'w-full text-left px-4 py-3 transition-colors',
+                    'w-full text-left px-4 py-3 transition-colors cursor-pointer',
                     'focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-700',
                     activeId === conv.id
                       ? 'bg-blue-50 dark:bg-blue-900/30 border-r-2 border-blue-600'
@@ -96,7 +99,7 @@ export default function ConversationSidebar({
                       </svg>
                     </button>
                   </div>
-                </button>
+                </div>
               </li>
             ))}
           </ul>

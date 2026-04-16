@@ -2,9 +2,12 @@
 
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
 import rehypeHighlight from 'rehype-highlight';
+import rehypeKatex from 'rehype-katex';
 import type { Components } from 'react-markdown';
 import 'highlight.js/styles/github-dark.css';
+import 'katex/dist/katex.min.css';
 
 interface Props {
   content: string;
@@ -90,8 +93,8 @@ export default function MarkdownRenderer({ content, className }: Props) {
   return (
     <div className={`prose-sm max-w-none text-sm leading-relaxed ${className ?? ''}`}>
       <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeHighlight]}
+        remarkPlugins={[remarkGfm, remarkMath]}
+        rehypePlugins={[rehypeHighlight, rehypeKatex]}
         components={markdownComponents}
       >
         {content}
