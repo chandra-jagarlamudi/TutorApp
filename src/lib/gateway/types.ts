@@ -19,4 +19,5 @@ export interface GatewayError {
 
 export interface ProviderAdapter {
   stream(request: CompletionRequest): AsyncGenerator<string, void, unknown>;
+  listModels(): Promise<string[]>;
 }

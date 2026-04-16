@@ -73,4 +73,22 @@ export class OpenRouterAdapter implements ProviderAdapter {
       reader.releaseLock();
     }
   }
+
+  async listModels(): Promise<string[]> {
+    let response: Response;
+    try {
+      response = await fetch('https://openrouter.ai/api/v1/models', {
+        headers: { Authorization: `Bearer ${this.apiKey}` },
+      });
+    } catch (err) {
+      throw makeGatewayError('network_error', `Network error fetching OpenRouter models: ${String(err)}`);
+    }
+
+    if (!response.ok) {
+      throw makeGatewayError('openrouter_error', `OpenRouter models endpoint returned ${response.status}`);
+    }
+
+    const body = await response.json() as { data?: Array<{ id: string }> };
+    return (body.data ?? []).map((m) => m.id);
+  }
 }

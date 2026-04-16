@@ -71,4 +71,18 @@ export class LMStudioAdapter implements ProviderAdapter {
       reader.releaseLock();
     }
   }
+
+  async listModels(): Promise<string[]> {
+    let response: Response;
+    try {
+      response = await fetch(`${this.host}/v1/models`);
+    } catch (err) {
+      throw makeGatewayError('lmstudio_unavailable', `LM Studio is unreachable at ${this.host}. Make sure LM Studio is running. (${String(err)})`);
+    }
+    if (!response.ok) {
+      throw makeGatewayError('lmstudio_error', `LM Studio models endpoint returned ${response.status}`);
+    }
+    const body = await response.json() as { data?: Array<{ id: string }> };
+    return (body.data ?? []).map((m) => m.id);
+  }
 }

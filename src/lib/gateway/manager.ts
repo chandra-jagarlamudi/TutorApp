@@ -10,6 +10,7 @@ export interface GatewayManager {
   setProvider(name: ProviderName): void;
   getActiveProvider(): ProviderName;
   stream(request: CompletionRequest): AsyncGenerator<string, void, unknown>;
+  listModels(): Promise<string[]>;
 }
 
 class GatewayManagerImpl implements GatewayManager {
@@ -38,6 +39,10 @@ class GatewayManagerImpl implements GatewayManager {
 
   async *stream(request: CompletionRequest): AsyncGenerator<string, void, unknown> {
     yield* this.getAdapter().stream(request);
+  }
+
+  async listModels(): Promise<string[]> {
+    return this.getAdapter().listModels();
   }
 }
 

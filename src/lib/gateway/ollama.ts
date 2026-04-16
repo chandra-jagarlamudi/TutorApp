@@ -72,4 +72,18 @@ export class OllamaAdapter implements ProviderAdapter {
       reader.releaseLock();
     }
   }
+
+  async listModels(): Promise<string[]> {
+    let response: Response;
+    try {
+      response = await fetch(`${this.host}/api/tags`);
+    } catch (err) {
+      throw makeGatewayError('ollama_unavailable', `Ollama is unreachable at ${this.host}. Make sure Ollama is running. (${String(err)})`);
+    }
+    if (!response.ok) {
+      throw makeGatewayError('ollama_error', `Ollama tags endpoint returned ${response.status}`);
+    }
+    const body = await response.json() as { models?: Array<{ name: string }> };
+    return (body.models ?? []).map((m) => m.name);
+  }
 }
