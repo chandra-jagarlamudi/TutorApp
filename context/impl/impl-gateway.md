@@ -18,6 +18,6 @@ Build site: context/plans/build-site.md
 | T-012 | DONE | API key from env in OpenRouterAdapter, never returned in API response |
 | T-013 | DONE | Unified SSE format: data: {"token": "..."} + data: [DONE] regardless of provider |
 | T-014 | DONE | GatewayManager.setProvider() switches on next call, POST /api/provider |
-| T-019 | TODO | Model list endpoint |
-| T-020 | TODO | Model list error handling |
+| T-019 | DONE | GET /api/models → {models: string[]} from active provider |
+| T-020 | DONE | GatewayError thrown on unreachable → 503 with {error, code, provider} |
 | T-031 | TODO | Streaming terminal signal |

@@ -19,3 +19,10 @@ last_edited: "2026-04-16T00:00:00Z"
 - T-016: Conversation retrieval — DONE. Files: src/app/api/conversations/route.ts, [id]/route.ts. Build P. Next: T-023,T-025,T-033
 - T-017: Conversation metadata — DONE. Files: src/lib/db/index.ts, API routes. subject/model/timestamps. Build P. Next: T-032,T-033
 - T-018: Conversation lifecycle — DONE. Files: src/app/api/conversations/route.ts, [id]/route.ts. Build P. Next: T-023,T-032
+
+### Wave 3 — 2026-04-16
+- T-019/T-020: Model list endpoint + error — DONE. Files: src/app/api/models/route.ts, adapters. Build P. Next: T-027
+- T-021: StreamingMessage + useStreamingChat — DONE. Files: src/components/StreamingMessage.tsx, src/hooks/useStreamingChat.ts. Build P. Next: T-029
+- T-022: SubjectSelector — DONE. Files: src/components/SubjectSelector.tsx. Build P. Next: T-034
+- T-023: ConversationSidebar — DONE. Files: src/components/ConversationSidebar.tsx. Build P. Next: T-025
+- T-024: Sidebar collapsible — DONE. Already in AppShell.tsx from T-011. Build P. Next: T-034
