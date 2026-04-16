@@ -14,5 +14,5 @@ Build site: context/plans/build-site.md
 | T-016 | DONE | GET /api/conversations (list, ordered by updated_at), GET /api/conversations/[id] (full history) |
 | T-017 | DONE | conversations table has subject, model, title, created_at, updated_at; /api/conversations/[id] returns all |
 | T-018 | DONE | POST /api/conversations (create, returns id), DELETE /api/conversations/[id], 404 on missing |
-| T-032 | TODO | Conversation auto-title |
-| T-033 | TODO | Conversation list ordering |
+| T-032 | DONE | messages/route.ts: sets title from first user message content (truncated to 60 chars) |
+| T-033 | DONE | listConversations() uses ORDER BY updated_at DESC; addMessage() updates updated_at |

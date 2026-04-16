@@ -26,3 +26,15 @@ last_edited: "2026-04-16T00:00:00Z"
 - T-022: SubjectSelector — DONE. Files: src/components/SubjectSelector.tsx. Build P. Next: T-034
 - T-023: ConversationSidebar — DONE. Files: src/components/ConversationSidebar.tsx. Build P. Next: T-025
 - T-024: Sidebar collapsible — DONE. Already in AppShell.tsx from T-011. Build P. Next: T-034
+
+### Wave 4 — 2026-04-16
+- T-025/T-026: ChatMessages + EmptyState — DONE. Files: src/components/ChatMessages.tsx. Build P. 
+- T-027: ModelPicker — DONE. Files: src/components/ModelPicker.tsx. Build P.
+- T-028/T-029: MessageInput — DONE. Files: src/components/MessageInput.tsx. Enter-to-send, clear+disable. Build P.
+
+### Wave 5 — 2026-04-16
+- T-030: Model refresh on provider switch — DONE. Already in ModelPicker useEffect deps.
+- T-031: Streaming terminal signal — DONE. data:[DONE] in chat route.
+- T-032: Auto-title — DONE. messages route sets title from first user msg.
+- T-033: List ordering — DONE. ORDER BY updated_at DESC.
+- T-034: Mobile layout — DONE. TutorApp.tsx wires AppShell with sidebar + bottomBar + chat area. All verified.

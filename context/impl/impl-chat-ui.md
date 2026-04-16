@@ -14,10 +14,10 @@ Build site: context/plans/build-site.md
 | T-022 | DONE | SubjectSelector.tsx: 6 subjects, active highlighted, accessible aria-pressed |
 | T-023 | DONE | ConversationSidebar.tsx: list with title+timestamp, select, new button, per-item delete |
 | T-024 | DONE | AppShell.tsx already has collapsible sidebar (hidden on mobile, toggle via hamburger) |
-| T-025 | TODO | Chat message display |
-| T-026 | TODO | Empty state |
-| T-027 | TODO | Model picker |
-| T-028 | TODO | Message composition |
-| T-029 | TODO | Input clear + send disable |
-| T-030 | TODO | Model list refresh |
-| T-034 | TODO | Mobile layout verification |
+| T-025 | DONE | ChatMessages.tsx: user/tutor bubble styling, chronological order, auto-scroll via useEffect+ref |
+| T-026 | DONE | EmptyState in ChatMessages.tsx shown when messages=[] and !isStreaming |
+| T-027 | DONE | ModelPicker.tsx: provider select + model select, fetches /api/models |
+| T-028 | DONE | MessageInput.tsx: textarea, send button, Enter-to-send keyboard shortcut |
+| T-029 | DONE | MessageInput clears after send; send button disabled when isStreaming |
+| T-030 | DONE | ModelPicker useEffect depends on activeProvider — refetches on provider change |
+| T-034 | DONE | AppShell: sidebar hidden on mobile, hamburger toggle, chat+bottomBar fill remaining height |

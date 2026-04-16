@@ -20,4 +20,4 @@ Build site: context/plans/build-site.md
 | T-014 | DONE | GatewayManager.setProvider() switches on next call, POST /api/provider |
 | T-019 | DONE | GET /api/models → {models: string[]} from active provider |
 | T-020 | DONE | GatewayError thrown on unreachable → 503 with {error, code, provider} |
-| T-031 | TODO | Streaming terminal signal |
+| T-031 | DONE | chat/route.ts emits data: [DONE]\n\n after stream ends; useStreamingChat reads it |
