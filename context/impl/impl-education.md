@@ -10,9 +10,9 @@ Build site: context/plans/build-site.md
 |------|--------|-------|
 | T-008 | DONE | 6 subject prompts (math, science, english, history, coding, general) with shared EDUCATIONAL_GUARDRAIL |
 | T-009 | DONE | SQLite schema (conversations + messages), addMessage() writes and updates updated_at |
-| T-015 | TODO | Educational guardrails injection |
-| T-016 | TODO | Conversation retrieval |
-| T-017 | TODO | Conversation metadata |
-| T-018 | TODO | Conversation lifecycle |
+| T-015 | DONE | Guardrail injected server-side via getSystemPrompt(subject) in /api/chat — never client-trusted |
+| T-016 | DONE | GET /api/conversations (list, ordered by updated_at), GET /api/conversations/[id] (full history) |
+| T-017 | DONE | conversations table has subject, model, title, created_at, updated_at; /api/conversations/[id] returns all |
+| T-018 | DONE | POST /api/conversations (create, returns id), DELETE /api/conversations/[id], 404 on missing |
 | T-032 | TODO | Conversation auto-title |
 | T-033 | TODO | Conversation list ordering |

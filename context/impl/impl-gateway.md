@@ -15,9 +15,9 @@ Build site: context/plans/build-site.md
 | T-005 | DONE | ECONNREFUSED/network error → GatewayError code=ollama_unavailable |
 | T-006 | DONE | LM Studio adapter, SSE streaming, configurable host via LMSTUDIO_HOST |
 | T-007 | DONE | Network error → GatewayError code=lmstudio_unavailable |
-| T-012 | TODO | API key isolation |
-| T-013 | TODO | Unified streaming format |
-| T-014 | TODO | Runtime provider switching |
+| T-012 | DONE | API key from env in OpenRouterAdapter, never returned in API response |
+| T-013 | DONE | Unified SSE format: data: {"token": "..."} + data: [DONE] regardless of provider |
+| T-014 | DONE | GatewayManager.setProvider() switches on next call, POST /api/provider |
 | T-019 | TODO | Model list endpoint |
 | T-020 | TODO | Model list error handling |
 | T-031 | TODO | Streaming terminal signal |
