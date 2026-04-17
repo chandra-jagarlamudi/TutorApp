@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.local
+    environment:
+      - NODE_ENV=production
+      - DB_PATH=/app/data/tutor.db
+    volumes:
+      - tutor_data:/app/data
+    container_name: TutorApp
+    restart: unless-stopped
+
+volumes:
+  tutor_data:

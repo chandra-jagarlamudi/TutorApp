@@ -50,20 +50,10 @@ export default function TutorApp() {
 
   // Create a new conversation
   const handleNewConversation = useCallback(async () => {
-    if (!selectedModel) return;
-    try {
-      const res = await fetch('/api/conversations', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ subject, model: selectedModel }),
-      });
-      if (!res.ok) return;
-      const conv = await res.json() as DbConversation;
-      setActiveConversationId(conv.id);
-      setMessages([]);
-      await refreshConversations();
-    } catch { /* ignore */ }
-  }, [subject, selectedModel, refreshConversations]);
+    setActiveConversationId(null);
+    setMessages([]);
+    setSubject('general');
+  }, []);
 
   // Delete a conversation
   const handleDeleteConversation = useCallback(async (id: string) => {

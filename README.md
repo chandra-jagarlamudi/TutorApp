@@ -48,6 +48,22 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+### Dev Container (VS Code)
+
+Open the repo in VS Code, accept "Reopen in Container" — Node 20, dependencies, and port forwarding are configured automatically via `.devcontainer/devcontainer.json`.
+
+### Docker (production)
+
+```bash
+# Build and run
+docker compose up --build
+
+# Run detached
+docker compose up -d
+```
+
+SQLite data persists in a named Docker volume (`tutor_data`). Pass API keys via `.env.local` — it is mounted as `env_file` and never baked into the image.
+
 ## Project Structure
 
 ```
@@ -81,7 +97,7 @@ context/
 
 ## How It Was Built — CaveKit Methodology
 
-This project was built using **CaveKit**, an AI-assisted development methodology that structures the design → plan → build loop with Claude Code.
+This project was built using [**CaveKit**](https://github.com/JuliusBrussee/cavekit), an AI-assisted development methodology that structures the design → plan → build loop with Claude Code.
 
 ### Phase 1 — Sketch (Kits)
 
